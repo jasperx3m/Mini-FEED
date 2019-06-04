@@ -13,6 +13,12 @@ namespace Domain
         public String Birthday { get; set; }
         public int Age { get; set; }
         public String Password { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("ID: {0} \nFirst Name: {1} \nLast Name: {2} \nEmail: {3} \nBirthday: {4} \nAge: {5}",this.UserID,this.FirstName,this.LastName,this.Email,this.Birthday,this.Age);
+        }
+        
     }
     
 }

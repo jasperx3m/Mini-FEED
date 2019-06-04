@@ -8,7 +8,7 @@ namespace Business
     class EditUser
     {
         List<User> userList = new List<User>();
-        public void edituser(string fname, string lname, string email, string bday, int age, int id)
+        public void edituser(string fname, string lname, string email,string  bday, int age, int id)
         {
             userList.Find(post => post.UserID == id).FirstName = fname;
             userList.Find(post => post.UserID == id).LastName = lname;

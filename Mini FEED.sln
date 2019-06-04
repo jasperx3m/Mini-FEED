@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini FEED", "Mini FEED\Mini FEED.csproj", "{4C746356-BF99-4322-866F-3B4D214765EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{19B2DCF6-55F1-4AB0-986B-50686BC45F48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{19B2DCF6-55F1-4AB0-986B-50686BC45F48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{1D136F7C-2A09-4B29-9AF9-837C699B0D2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{1D136F7C-2A09-4B29-9AF9-837C699B0D2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repos", "Repos\Repos.csproj", "{B7AD9212-5CAF-46D8-80FA-A91279786768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repos", "Repos\Repos.csproj", "{B7AD9212-5CAF-46D8-80FA-A91279786768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleRunnerTest", "ConsoleRunnerTest\ConsoleRunnerTest.csproj", "{D6799400-D3E6-49B7-B5F5-9366CB9451A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B7AD9212-5CAF-46D8-80FA-A91279786768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7AD9212-5CAF-46D8-80FA-A91279786768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7AD9212-5CAF-46D8-80FA-A91279786768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6799400-D3E6-49B7-B5F5-9366CB9451A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6799400-D3E6-49B7-B5F5-9366CB9451A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6799400-D3E6-49B7-B5F5-9366CB9451A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6799400-D3E6-49B7-B5F5-9366CB9451A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
