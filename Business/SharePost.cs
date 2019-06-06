@@ -9,30 +9,49 @@ namespace Business
     public class SharePost
     {
         Post post = new Post();
+        List<Post> feed = new List<Post>();
         PostRepo postrepo = new PostRepo();
-        public String OriginalPost(string author)
+
+        public void OriginalPost(string author)
         {
-            
-            post.PostID = 1;
-            post.Subject = "Blast Asia Trainees";
-            post.PostBody = "Go Blasters!!!";
-            post.Author = author;
 
-            post.DateCreated = DateTime.Parse("06/02/2019 8:55:02");
-            return String.Format(post.GetDetails());
-
-            
+            feed.Add(
+            new Post
+            {
+                PostID = feed.Count,
+                Subject = "Blast Asia Trainees",
+                PostBody = "Go Blasters!!!",
+                Author = author,
+                DateCreated = DateTime.Parse("06/02/2019 8:55:02")
+            });
         }
-        public string ClonePost(string author)
+        public void ClonePost(int id,string author)
         {
 
-            Post postcopy = (Post)post.Clone();
+            Post postcopy = (Post)feed[id].Clone();
             postcopy.Author = author;
-            postcopy.PostBody += "\nby: "+post.Author+"\nyeah yeah yeah";
+            postcopy.PostBody += "\nby: "+feed[id].Author+"\nyeah yeah yeah";
             postcopy.DateCreated = DateTime.Now;
             postrepo.AddPost(postcopy);
-            return String.Format(postcopy.GetDetails());
-            
+            feed.Add
+                (
+                new Post
+                {
+                    PostID = feed.Count,
+                    Subject = postcopy.Subject,
+                    PostBody= postcopy.PostBody,
+                    Author=postcopy.Author,
+                    DateCreated=postcopy.DateCreated
+                }
+                ); 
+        }
+        public void GetDetails()
+        {
+            foreach (var i in feed)
+            {
+                Console.WriteLine("Subject: {0} \nBody: {1} \nAuthor: {2} \nDateCreated: {3} \nPostID:{4}\n", i.Subject, i.PostBody, i.Author, i.DateCreated, i.PostID);
+            }
+
         }
 
 
