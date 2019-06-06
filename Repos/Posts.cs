@@ -4,9 +4,14 @@ using System.Collections.Generic;
 
 namespace Repos
 {
-    public class Class1
+    public class PostRepo
     {
+        Post p;
         public List<Post> postList = new List<Post>();
+        public void AddPost (Post postcopy)
+        {
+            postList.Add(postcopy);
+        }
 
     }
 }

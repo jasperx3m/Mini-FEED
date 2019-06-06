@@ -2,32 +2,39 @@
 using System.Collections.Generic;
 using System.Text;
 using Domain;
+using Repos;
 
 namespace Business
 {
     public class SharePost
     {
         Post post = new Post();
-
-        public String OriginalPost()
+        PostRepo postrepo = new PostRepo();
+        public String OriginalPost(string author)
         {
             
             post.PostID = 1;
             post.Subject = "Blast Asia Trainees";
-            post.PostBody = "Kaya natin to, hotdog tayo!";
-            post.Author = "Kayla Capito";
-            post.DateCreated = DateTime.Now;
+            post.PostBody = "Go Blasters!!!";
+            post.Author = author;
+
+            post.DateCreated = DateTime.Parse("06/02/2019 8:55:02");
             return String.Format(post.GetDetails());
+
             
         }
-        public string ClonePost()
+        public string ClonePost(string author)
         {
 
             Post postcopy = (Post)post.Clone();
-            postcopy.Author = "Charles Kenichi";
-            postcopy.PostBody += "yeah yeah yeah";
+            postcopy.Author = author;
+            postcopy.PostBody += "\nby: "+post.Author+"\nyeah yeah yeah";
+            postcopy.DateCreated = DateTime.Now;
+            postrepo.AddPost(postcopy);
             return String.Format(postcopy.GetDetails());
+            
         }
+
 
 
     }
