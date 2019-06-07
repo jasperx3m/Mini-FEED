@@ -6,15 +6,11 @@ namespace Repos
 {
     public class PostRepo
     {
-        Post post = new Post();
+        Post p;
         public List<Post> postList = new List<Post>();
-        public void AddPostCopy (Post postcopy)
+        public void AddPost (Post postcopy)
         {
             postList.Add(postcopy);
-        }
-        public void AddPost(Post post)
-        {
-            postList.Add(AddPostCopy);
         }
 
     }

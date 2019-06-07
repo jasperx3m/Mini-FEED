@@ -30,7 +30,7 @@ namespace Business
             postcopy.Author = author;
             postcopy.PostBody += "\nby: "+feed[id].Author+"\nyeah yeah yeah";
             postcopy.DateCreated = DateTime.Now;
-            postrepo.AddPostCopy(postcopy);
+            postrepo.AddPost(postcopy);
             feed.Add
                 (
                 new Post
