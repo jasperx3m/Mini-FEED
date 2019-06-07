@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain
 {
-    public partial class User : Entity, ICloneable
+    public class User : Entity, ICloneable
     {
         public int UserID { get; set; }
         public String FirstName { get; set; }
@@ -12,15 +12,29 @@ namespace Domain
         public String Email { get; set; }
         public int Age { get; set; }
         public String Password { get; set; }
-
+        public Birthday BirthdayDetails { get; set; }
         public object Clone()
         {
             User userclone;
             userclone = (User)this.Clone();
             userclone.BirthdayDetails = (Birthday)BirthdayDetails.Clone();
             return userclone;
+       
         }
 
+        public class Birthday 
+        {
+            public int Month { get; set; }
+            public int Day { get; set; }
+            public int Year { get; set; }
+
+            public object Clone()
+            {
+                return this.MemberwiseClone();
+            }
+        }
+
+        
 
         //public override string ToString()
         //{
@@ -29,19 +43,5 @@ namespace Domain
 
 
     }
-    public partial class User
-    {
-        public Birthday BirthdayDetails { get; set; }
-    }
-    public class Birthday : ICloneable
-    {
-        public int Month { get; set; }
-        public int Day { get; set; }
-        public int Year { get; set; }
-
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-    }
+   
 }

@@ -9,8 +9,7 @@ namespace ConsoleRunnerTest
 {
     class Program
     {
-        
-        
+
         public static void Main(string[] args)
         {
             SharePost sp = new SharePost();

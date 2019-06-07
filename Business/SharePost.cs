@@ -8,13 +8,11 @@ namespace Business
 {
     public class SharePost
     {
-        Post post = new Post();
         List<Post> feed = new List<Post>();
         PostRepo postrepo = new PostRepo();
 
         public void OriginalPost(string author)
         {
-
             feed.Add(
             new Post
             {
@@ -32,18 +30,18 @@ namespace Business
             postcopy.Author = author;
             postcopy.PostBody += "\nby: "+feed[id].Author+"\nyeah yeah yeah";
             postcopy.DateCreated = DateTime.Now;
-            postrepo.AddPost(postcopy);
+            postrepo.AddPostCopy(postcopy);
             feed.Add
                 (
                 new Post
                 {
                     PostID = feed.Count,
                     Subject = postcopy.Subject,
-                    PostBody= postcopy.PostBody,
-                    Author=postcopy.Author,
-                    DateCreated=postcopy.DateCreated
+                    PostBody = postcopy.PostBody,
+                    Author = postcopy.Author,
+                    DateCreated = postcopy.DateCreated
                 }
-                ); 
+                ) ; 
         }
         public void GetDetails()
         {
